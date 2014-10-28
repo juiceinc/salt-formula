@@ -1,0 +1,17 @@
+---
+driver:
+  name: vagrant
+
+platforms:
+  - name: ubuntu-12.04
+
+provisioner:
+  name: salt_solo
+  formula: salt
+  state_top:
+    base:
+      '*':
+        - salt.master
+
+suites:
+  - name: default
